@@ -5,10 +5,10 @@
 	
 	<body>
 	<center>
-	<div> <a href ="Education.html"> All Student </a></div>
-	<div><a href ="Family Details.html"> Add student </a></div>
-	<div><a href ="Experience.html"> All department </a> </div>
-	<div><a href ="Achievement.html"> Add Department </a></div>
+	<div> <a href =""> All Student </a></div>
+	<div><a href =""> Add student </a></div>
+	<div><a href =""> All department </a> </div>
+	<div><a href =""> Add Department </a></div>
 
 	</center>
 	</body>
