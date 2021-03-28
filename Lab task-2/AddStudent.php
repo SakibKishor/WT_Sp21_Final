@@ -56,6 +56,7 @@
 		{
 			$err_number="*CGPA should be all numbers";
 			$hasError=true;
+			#sakib 19-40013-1
 		}
 		else
 		{
