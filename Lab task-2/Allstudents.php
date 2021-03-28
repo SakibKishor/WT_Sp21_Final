@@ -1,35 +1,44 @@
 <?php
-	require_once "db_config.php";
-	$uname= "";
-	$pass= "";
-	if ($_SERVER["REQUEST_METHOD"]=="POST")
+	session_start();
+	if(!isset($_SESSION["loggedin"]))
 	{
-		$uname= $_POST["uname"];
-		$pass= $_POST["pass"];
-		$query= "select * from user where username='$uname' and password='$pass' ";
-		$result= get($query);
-		
-		if(count($result)>0)
-		{
-			session_start();
-			$_SESSION["loggedin"]= $uname;
-			header("Location: dashboard.php");
-		}
-		else
-		{
-			echo "Username or password is invalid";
-		}
+		header("Location:login.php");
 	}
-?>
+	require_once "db_config.php";
 	
-<html>
-	<head></head>
-	<body>
-		<form action="" method="POST">
-			Username: <input type="text" name ="uname">    <br>
-			Password: <input type="password" name="pass"> <br>
-			<input type ="submit" name= "submit" value= "login">
-		</form>
-	</body>
-</html>
+	$query= "select * from student";
+	$result= get($query);
 
+?>
+
+<table border="1" style= "border-collapse:collapse;">
+	<tr>
+		<th>Id</th>
+		<th>Name</th>
+		<th>DOB</th>
+		<th>Credit</th>
+		<th>CGPA</th>
+		<th>Department Id</th>
+	</tr>
+	
+	<?php
+		foreach( $result as $row )
+		{
+			echo "<tr>";
+			echo "<td>".$row["S_id"]."</td>";
+			echo "<td>".$row["S_name"]."</td>";
+			echo "<td>".$row["DOB"]."</td>";
+			echo "<td>".$row["Credit"]."</td>";
+			echo "<td>".$row["CGPA"]."</td>";
+			echo "<td>".$row["Dept_id"]."</td>";
+			echo    "<td> 
+						<a href='#'> Edit</a> | 
+						<a href='#'> Delete </a> 
+					</td>";
+			echo "</tr>";
+		}
+	
+	
+	?>
+		
+</table>	

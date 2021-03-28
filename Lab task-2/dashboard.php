@@ -5,7 +5,7 @@
 	
 	<body>
 	<center>
-	<div> <a href =""> All Student </a></div>
+	<div> <a href ="Allstudents.php"> All Student </a></div>
 	<div><a href =""> Add student </a></div>
 	<div><a href =""> All department </a> </div>
 	<div><a href =""> Add Department </a></div>
